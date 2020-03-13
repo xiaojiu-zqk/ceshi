@@ -103,7 +103,7 @@ public class TopicListBean {
 
             private int id;
             private String title;
-            private int price_info;
+            private String price_info;
             private String scene_pic_url;
             private String subtitle;
 
@@ -123,11 +123,11 @@ public class TopicListBean {
                 this.title = title;
             }
 
-            public int getPrice_info() {
+            public String getPrice_info() {
                 return price_info;
             }
 
-            public void setPrice_info(int price_info) {
+            public void setPrice_info(String price_info) {
                 this.price_info = price_info;
             }
 

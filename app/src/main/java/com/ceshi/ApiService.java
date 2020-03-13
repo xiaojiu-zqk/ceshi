@@ -6,7 +6,7 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 
     public interface ApiService {
-    String BASE_URL = "https://cdwan.cn/api";
+    String BASE_URL = "https://cdwan.cn/api/";
 
     @GET("topic/list")
     Observable<TopicListBean> getData();

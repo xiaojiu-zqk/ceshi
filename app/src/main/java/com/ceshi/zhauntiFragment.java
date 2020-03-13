@@ -19,22 +19,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class zhauntiFragment extends Fragment implements com.ceshi.view.View {
 
 
     private RecyclerView mZhauntiRv;
     private ArrayList<TopicBean> dataBeans;
     private Zhauntiadapter adapter;
-    
+    private TopicPersenter topicPersenter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View inflate = inflater.inflate(R.layout.fragment_zhaunti, container, false);
-        TopicPersenter topicPersenter = new TopicPersenter(this);
+        topicPersenter = new TopicPersenter(this);
+        initView(inflate);
         topicPersenter.getdata();
         return inflate;
     }
@@ -51,6 +49,7 @@ public class zhauntiFragment extends Fragment implements com.ceshi.view.View {
                 Toast.makeText(getActivity(), dataBeans.get(position).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     @Override

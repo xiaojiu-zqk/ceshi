@@ -1,5 +1,7 @@
 package com.ceshi.module;
 
+import android.util.Log;
+
 import com.ceshi.ApiService;
 import com.ceshi.bean.TopicListBean;
 
@@ -13,6 +15,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TopicModule {
+    private static final String TAG = "TopicModule";
     public void getdata(CallBack callBack) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ApiService.BASE_URL)
@@ -36,7 +39,7 @@ public class TopicModule {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        Log.i(TAG, "onError: "+e.toString());
                     }
 
                     @Override
